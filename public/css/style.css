@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+body {
+    margin: 0;
+    background: #eee;
+    font-family: "Roboto", sans-serif;
+}
+#map{
+	width: 100vw;
+	height: 100vh;
+}
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.gm-style img[src^="https://avatar"]{
+    border-radius: 50%;
+}
+.btn-register{
+	padding: 10px;
+    width: 200px;
+    height: 20px;
+    font-size: 16px;
+    background: #444;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 1;
+    text-align: center;
+}
+.btn-register svg{
+    float: left;
+    margin-left: 5px;
+    margin-top: -1px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.col-md-4.form{
+    background: #fff;
+    padding: 50px;
+}
+.datepicker{
+    padding: .5rem .75rem;
+}
+.form-check-inline{
+    margin-top: 5px;
+}
+.col-form-legend{
+    padding-left: 0;
+}
+
