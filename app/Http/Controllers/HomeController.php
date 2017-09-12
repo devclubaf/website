@@ -18,6 +18,12 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function locations()
+    {
+        $users = User::all();
+        return response()->json($users);
+    }
+
     /**
      * @param $token
      * @return mixed

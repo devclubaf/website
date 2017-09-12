@@ -18,6 +18,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('registered/locations', 'HomeController@locations')->name('locations');
 Route::get('register/form/{token}', 'HomeController@register')->name('form');
 Route::post('register/update', 'HomeController@update')->name('update');
 Route::get('register/github', 'HomeController@redirectToProvider')->name('register');
