@@ -33,11 +33,11 @@ function initMap() {
                     window.open(this.url, '_blank');
                 });
             } // end of for loop
+            addMarkerCluster();
         }
     };
     xhttp.open("GET", "/registered/locations", true);
     xhttp.send();
-    addMarkerCluster();
     inputSearch();
 }
 
