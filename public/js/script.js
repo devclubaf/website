@@ -35,7 +35,7 @@ function initMap() {
             } // end of for loop
         }
     };
-    xhttp.open("GET", "http://devclub.dev/registered/locations", true);
+    xhttp.open("GET", "/registered/locations", true);
     xhttp.send();
     addMarkerCluster();
     inputSearch();
