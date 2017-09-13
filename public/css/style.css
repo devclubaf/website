@@ -1,12 +1,31 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-body {
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+body{
     margin: 0;
     background: #eee;
-    font-family: "Roboto", sans-serif;
+}
+body, h1, a, li, p{
+    font-family: 'Quicksand', sans-serif !important;
+}
+.bg-light {
+    background: rgba(120, 123, 125, 0.86)!important;
+}
+.bg-dark {
+    background: rgba(0, 0, 0, 0.8)!important;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.bg-dark .nav-item{
+    font-size: 0.7rem;
 }
 #map{
 	width: 100vw;
 	height: 100vh;
+}
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom{
+    bottom: 160px !important;
+}
+#find-location{
+    width: 100%;
 }
 #pac-input {
     background-color: #fff;
@@ -24,35 +43,34 @@ body {
     border-radius: 50%;
 }
 .btn-register{
-	padding: 10px;
     width: 200px;
-    height: 20px;
-    font-size: 16px;
     background: #444;
     color: #fff;
-    display: inline-block;
-    text-decoration: none;
-    position: absolute;
-    top: 20px;
-    right: 50px;
-    z-index: 1;
-    text-align: center;
 }
 .btn-register svg{
     float: left;
-    margin-left: 5px;
+    margin-left: 2px;
     margin-top: -1px;
 }
-
-.container{
+.btn-register span{
+    margin-left: 5px;
+}
+.container.center-align{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
-.col-md-4.form{
+.col-md-12.form{
     background: #fff;
     padding: 50px;
+}
+.col-md-12.logo{
+    text-align: center;
+    margin: 40px 0;
+}
+.col-form-legend{
+    float: left;
 }
 .datepicker{
     padding: .5rem .75rem;

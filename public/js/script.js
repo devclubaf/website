@@ -2,7 +2,7 @@ var markers = [];
 var locations = [];
 function initMap() {
     var mapOptions = {
-        center: new google.maps.LatLng(34.5539525, 67.3175319),
+        center: new google.maps.LatLng(34.299, 66.5175319),
         zoom: 7,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeControl: false
@@ -43,9 +43,9 @@ function initMap() {
 
 function inputSearch(){
     // Create the search box and link it to the UI element.
-    var input = document.getElementById('pac-input');
+    var input = document.getElementById('find-location');
     var searchBox = new google.maps.places.SearchBox(input);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
