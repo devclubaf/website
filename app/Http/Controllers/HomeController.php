@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Socialite;
 use App\User;
+use JsValidator;
+use App\Http\Requests\RegisterFormRequest;
 class HomeController extends Controller
 {
 
@@ -18,6 +20,9 @@ class HomeController extends Controller
         return view('home');
     }
 
+    /**
+     * @return mixed
+     */
     public function locations()
     {
         $users = User::all();
@@ -37,14 +42,14 @@ class HomeController extends Controller
      * @param Request $request
      * @return mixed
      */
-    public function update(Request $request)
+    public function update(Request $request, RegisterFormRequest $validator)
     {
         $user = User::where('remember_token', $request->input('token'))->first();
         $user->gender = $request->input('gender');
         $user->dob = $request->input('dob');
         $user->location = $request->input('location');
         $user->save();
-        return redirect('/');
+        return redirect()->route('home')->with('status', 'success');
     }
 
     /**
@@ -69,6 +74,7 @@ class HomeController extends Controller
         if (!$user->first())
         {
             $user = new User;
+            $user->github_id = $data->id;
             $user->name = $data->user['name'];
             $user->nickname = $data->nickname;
             $user->email = $data->user['email'];
@@ -80,6 +86,6 @@ class HomeController extends Controller
             $user->remember_token = $data->token;
             $user->save();
         }
-        return redirect("register/form/$user->remember_token");
+        return redirect()->route('form', ['token' => $user->remember_token]);
     }
 }

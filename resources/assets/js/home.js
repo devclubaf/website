@@ -5,7 +5,8 @@ function initMap() {
         center: new google.maps.LatLng(34.299, 66.5175319),
         zoom: 7,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
-        mapTypeControl: false
+        mapTypeControl: false,
+        styles:mapStyle
     };
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
     var xhttp = new XMLHttpRequest();
@@ -20,6 +21,7 @@ function initMap() {
                     position: myLatLng,
                     optimized:false,
                     url:locations[i].html_url,
+                    title:locations[i].nickname,
                     icon: {
                         url: locations[i].avatar, // url
                         scaledSize: new google.maps.Size(50, 50), // scaled size
@@ -77,3 +79,13 @@ function addMarkerCluster(){
         maxZoom: 18
     });
 }
+
+// removing success alert message after 10s
+function hideAlert() {
+    var element = document.getElementById("alert-success");
+    if (typeof(element) != 'undefined' && element != null)
+    {
+        element.remove();
+    }
+}
+setTimeout(hideAlert, 10000);

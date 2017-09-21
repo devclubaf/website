@@ -1,9 +1,124 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
 
 // Variables
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap/scss/bootstrap";
+
+body{
+    margin: 0;
+    background: $body-bg;
+}
+body, h1, a, li, p{
+    font-family: $font-family-sans-serif;
+}
+.no-padding{
+    padding: 0;
+    margin: 0;
+}
+.bg-light {
+    background: $bg-light;
+}
+.bg-dark {
+    background: $bg-dark;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.bg-dark{
+	.nav-item{
+	    font-size: 0.7rem;
+	}
+}
+#map{
+	width: 100vw;
+	height: 100vh;
+}
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom{
+    bottom: 160px !important;
+}
+#find-location{
+    width: 100%;
+}
+#pac-input {
+    background-color: $white;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.gm-style img[src^="https://avatar"]{
+    border-radius: 50%;
+}
+.btn-register{
+    width: 200px;
+    background: $dark;
+    color: $white;
+}
+.btn-register:hover{
+    color: $white;
+}
+.btn-register{
+	svg{
+	    float: left;
+	    margin-left: 2px;
+	    margin-top: -1px;
+	}
+}
+.btn-register{
+	span{
+	    margin-left: 5px;
+	}
+}
+.col-3.form{
+    height: 100vh;
+    background-color: $white;
+    padding: 20px;
+}
+.col-md-12.image{
+    text-align: center;
+    margin: 5px 0 30px;
+}
+.col-form-legend{
+    float: left;
+}
+.datepicker{
+    padding: .5rem .75rem !important;
+}
+.form-check-inline{
+    margin-top: 5px;
+}
+.col-form-legend{
+    padding-left: 0;
+}
+#register-map{
+    height: 100vh;
+    width: 100%;
+}
+.has-error{
+	input{
+		border-color: #dc3545;
+	}
+}
+.has-success{
+	input{
+		border-color: #28a745;
+	}
+}
+.error-help-block{
+	color: #dc3545;
+}
+.alert-success {
+    position: absolute;
+    border-radius: 0;
+    z-index: 10000;
+    width: 100%;
+    text-align: center;
+    // display: none;
+}
