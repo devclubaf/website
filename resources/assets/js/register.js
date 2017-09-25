@@ -1,5 +1,4 @@
 var markers = [];
-var locations = [];
 var markerLocator;
 function initMap() {
     var mapOptions = {
@@ -13,10 +12,10 @@ function initMap() {
     google.maps.event.addListener(map, 'click', function(event) {
         placeMarker(event.latLng);
     });
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            locations = JSON.parse(this.responseText);
+    $.ajax({
+        type:'get',
+        url:'/registered/locations',
+        success:function(locations){
             for (var i = 0; i < locations.length; i++) {
                 var location= locations[i].location.split(',');
                 myLatLng = new google.maps.LatLng(location[0] , location[1]);
@@ -41,9 +40,7 @@ function initMap() {
             } // end of for loop
             addMarkerCluster();
         }
-    };
-    xhttp.open("GET", "/registered/locations", true);
-    xhttp.send();
+    });
     getLocation(map);
 }
 
@@ -57,7 +54,6 @@ function addMarkerCluster(){
 function getLocation(map){
     var input = document.getElementById('search-location');
     var searchBox = new google.maps.places.SearchBox(input);
-        // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
             searchBox.setBounds(map.getBounds());

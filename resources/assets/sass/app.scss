@@ -102,12 +102,13 @@ body, h1, a, li, p{
     width: 100%;
 }
 .has-error{
-	input{
+	input, textarea{
 		border-color: #dc3545;
 	}
+
 }
 .has-success{
-	input{
+	input, textarea{
 		border-color: #28a745;
 	}
 }
@@ -121,4 +122,81 @@ body, h1, a, li, p{
     width: 100%;
     text-align: center;
     // display: none;
+}
+
+/* Overlay style */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $overlay-bg;
+    z-index: 10000;
+}
+
+.content {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+.content.overlay-open {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+.overlay-content {
+    visibility: hidden;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+    transition: transform 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-content.open {
+    visibility: visible;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+.overlay{
+    .overlay-close {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        overflow: hidden;
+        border: none;
+        background: url("../images/cross.png") no-repeat center center;
+        text-indent: 200%;
+        color: transparent;
+        outline: none;
+        z-index: 100;
+        cursor: pointer;
+    }
+    .row{
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .form{
+        padding: 50px;
+    }
+    input.form-control, textarea.form-control, input.form-control:focus{
+        background-color:$input-bg-dark;
+        color: $gray;
+    }
+    input.form-control:focus, textarea.form-control:focus{
+        border-color: $black;
+        color: $gray;
+    }
+    button, button:hover{
+        background-color:$dark;
+        border: none;
+    }
+    button{
+        color: $gray
+    }
 }

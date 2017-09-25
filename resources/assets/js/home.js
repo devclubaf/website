@@ -1,18 +1,17 @@
 var markers = [];
-var locations = [];
 function initMap() {
     var mapOptions = {
         center: new google.maps.LatLng(34.299, 66.5175319),
         zoom: 7,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeControl: false,
-        styles:mapStyle
+        styles:mapStyle // it is in map-style.js
     };
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            locations = JSON.parse(this.responseText);
+    $.ajax({
+        type:'get',
+        url:'/registered/locations',
+        success:function(locations){
             for (var i = 0; i < locations.length; i++) {
                 var location= locations[i].location.split(',');
                 myLatLng = new google.maps.LatLng(location[0] , location[1]);
@@ -37,9 +36,7 @@ function initMap() {
             } // end of for loop
             addMarkerCluster();
         }
-    };
-    xhttp.open("GET", "/registered/locations", true);
-    xhttp.send();
+    });
     inputSearch();
 }
 
@@ -47,7 +44,6 @@ function inputSearch(){
     // Create the search box and link it to the UI element.
     var input = document.getElementById('find-location');
     var searchBox = new google.maps.places.SearchBox(input);
-    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
@@ -81,11 +77,18 @@ function addMarkerCluster(){
 }
 
 // removing success alert message after 10s
-function hideAlert() {
-    var element = document.getElementById("alert-success");
-    if (typeof(element) != 'undefined' && element != null)
-    {
-        element.remove();
-    }
-}
-setTimeout(hideAlert, 10000);
+setTimeout(function() {$('#alert-success').remove() }, 10000);
+
+// scripts for overlay window
+$('#trigger-overlay-contact').on('click', function(){
+    $('#overlay-contact').toggleClass('open');
+    $('.content').toggleClass('overlay-open');
+});
+$('#trigger-overlay-feedback').on('click', function(){
+    $('#overlay-feedback').toggleClass('open');
+    $('.content').toggleClass('overlay-open');
+});
+$('.overlay-close').on('click', function(){
+    $(this).parent().toggleClass('open');
+    $('.content').toggleClass('overlay-open');
+});

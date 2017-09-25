@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('style')
-<link href="{{ asset('vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css') }}" rel="stylesheet">
+<link href="{{ asset('css/register.css') }}" rel="stylesheet">
 @endsection
 @section('content')
 <div class="row no-padding">
     <div class = "col-3 form">
-        <div class="col-md-12 image"><img src="{{ asset('img/logo.png') }}" alt=""></div>
+        <div class="col-md-12 image"><a href="/"><img src="{{ asset('images/logo.png') }}" alt=""></a></div>
         <form action="{{action('HomeController@update')}}" method="post">
             <div class="alert alert-warning" role="alert"> One Step More! </div>
             {!! csrf_field() !!}
@@ -39,14 +39,8 @@
 </div>
 @endsection
 @push('script')
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-<script src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
-<script src="{{ asset('js/map-style.js') }}"></script>
 <script src="{{ asset('js/register.js') }}"></script>
-<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"> </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDgIdV7w8h18k8E0TtZwjIlYjFi8cCBX2Y&am&callback=initMap"> </script>
-<script src="{{asset('vendor/jsvalidation/js/jsvalidation.min.js')}}"></script>
 @endpush
 
 @section('validator')

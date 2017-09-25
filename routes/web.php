@@ -23,3 +23,6 @@ Route::get('register/form/{token}', 'HomeController@register')->name('form');
 Route::post('register/update', 'HomeController@update')->name('update');
 Route::get('register/github', 'HomeController@redirectToProvider')->name('register');
 Route::get('register/github/callback', 'HomeController@handleProviderCallback')->name('callback');
+
+Route::post('contact/store', 'HomeController@contact')->name('contact');
+Route::post('feedback/store', 'HomeController@feedback')->name('feedback');

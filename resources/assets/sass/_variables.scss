@@ -5,13 +5,17 @@ $body-bg: #eee;
 
 // Brands
 $white: #fff;
-$dark:#444;
+$dark:#06212d;
+$black: #000;
 
-$bg-light: rgba(63, 115, 148, 0.86) !important;
-$bg-dark: rgba(19, 21, 123, 0.8) !important;
+$bg-light: rgba(26, 62, 84, 0.93) !important;
+$bg-dark: rgb(16, 45, 58) !important;
 
 // Typography
 $font-family-sans-serif: 'Quicksand', sans-serif !important;
 // $font-size-base: 14px;
 $line-height-base: 1.6;
 $text-color: #636b6f;
+$overlay-bg: rgba(16, 45, 58, 0.9);
+$input-bg-dark: #2a4854;
+$gray: #bbb;
