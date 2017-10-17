@@ -1,5 +1,23 @@
+$(document).ready(function(){
+    $(".alert").alert();
+    // scripts for overlay window
+    $('#trigger-overlay-contact').on('click', function(){
+        $('#overlay-contact').toggleClass('open');
+        $('.content').toggleClass('overlay-open');
+    });
+    $('#trigger-overlay-feedback').on('click', function(){
+        $('#overlay-feedback').toggleClass('open');
+        $('.content').toggleClass('overlay-open');
+    });
+    $('.overlay-close').on('click', function(){
+        $(this).parent().toggleClass('open');
+        $('.content').toggleClass('overlay-open');
+    });
+});
+
 var markers = [];
 function initMap() {
+    var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
         center: new google.maps.LatLng(34.299, 66.5175319),
         zoom: 7,
@@ -10,7 +28,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
     $.ajax({
         type:'get',
-        url:'/registered/locations',
+        url:'/registered/users',
         success:function(locations){
             for (var i = 0; i < locations.length; i++) {
                 var location= locations[i].location.split(',');
@@ -33,7 +51,9 @@ function initMap() {
                 google.maps.event.addListener(marker, 'click', function() {
                     window.open(this.url, '_blank');
                 });
+                bounds.extend(markers[i].getPosition());
             } // end of for loop
+            map.fitBounds(bounds);
             addMarkerCluster();
         }
     });
@@ -75,20 +95,3 @@ function addMarkerCluster(){
         maxZoom: 18
     });
 }
-
-// removing success alert message after 10s
-setTimeout(function() {$('#alert-success').remove() }, 10000);
-
-// scripts for overlay window
-$('#trigger-overlay-contact').on('click', function(){
-    $('#overlay-contact').toggleClass('open');
-    $('.content').toggleClass('overlay-open');
-});
-$('#trigger-overlay-feedback').on('click', function(){
-    $('#overlay-feedback').toggleClass('open');
-    $('.content').toggleClass('overlay-open');
-});
-$('.overlay-close').on('click', function(){
-    $(this).parent().toggleClass('open');
-    $('.content').toggleClass('overlay-open');
-});

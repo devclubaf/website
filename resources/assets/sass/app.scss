@@ -120,8 +120,12 @@ body, h1, a, li, p{
     border-radius: 0;
     z-index: 10000;
     width: 100%;
-    text-align: center;
-    // display: none;
+    padding: 0.55rem 1.25rem;
+    height: 50px;
+}
+.alert-dismissible .close{
+    padding: 0.75rem 0 0 0;
+    cursor: pointer;
 }
 
 /* Overlay style */

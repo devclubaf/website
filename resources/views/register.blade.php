@@ -6,9 +6,10 @@
 <div class="row no-padding">
     <div class = "col-3 form">
         <div class="col-md-12 image"><a href="/"><img src="{{ asset('images/logo.png') }}" alt=""></a></div>
-        <form action="{{action('HomeController@update')}}" method="post">
-            <div class="alert alert-warning" role="alert"> One Step More! </div>
+        <form action="{{ route('update', $token) }}" method="POST">
+            {{ method_field('PUT') }}
             {!! csrf_field() !!}
+            <div class="alert alert-warning" role="alert"> One Step More! </div>
             <input type="hidden" name="token" value="{{ $token }}" placeholder="">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search Location" id = "search-location">
@@ -39,10 +40,14 @@
 </div>
 @endsection
 @push('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"> </script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDgIdV7w8h18k8E0TtZwjIlYjFi8cCBX2Y&am"> </script>
 <script src="{{ asset('js/register.js') }}"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDgIdV7w8h18k8E0TtZwjIlYjFi8cCBX2Y&am&callback=initMap"> </script>
+<script>
+    $(function(){ initMap(); })
+</script>
 @endpush
-
 @section('validator')
     {!! JsValidator::formRequest('App\Http\Requests\RegisterFormRequest') !!}
 @endsection

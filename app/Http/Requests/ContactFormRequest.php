@@ -24,8 +24,18 @@ class ContactFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|max:255',
-            'comment' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'comment' => 'required|string|max:255',
         ];
+    }
+
+    public function email(): string
+    {
+        return $this->get('email');
+    }
+
+    public function comment(): string
+    {
+        return $this->get('comment');
     }
 }

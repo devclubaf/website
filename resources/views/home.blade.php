@@ -2,7 +2,14 @@
 @section('content')
 <div class="content">
 	@if (session('status'))
-	    <div class="alert alert-success" role="alert" id = "alert-success"> {{session('status')}} </div>
+	    <div class="alert alert-success alert-dismissible fade show" role="alert">
+		  <div class="container">
+		  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		  {!! session('status') !!}
+		  </div>
+		</div>
 	@endif
 	<nav class="navbar navbar-light bg-light justify-content-between fixed-top">
 		<a class="navbar-brand"><img src="{{ asset('images/logo_gray.png') }}"></a>
@@ -39,7 +46,7 @@
 	<div class="container">
 		<div class="row no-padding">
 		    <div class = "col-6 form">
-		        <form action="{{action('HomeController@contact')}}" method="post">
+		        <form action="{{route('contact')}}" method="POST">
 		            {!! csrf_field() !!}
 		            <div class="form-group">
 		                <input type="email" class="form-control" placeholder="Type Your Email" name = "email">
@@ -59,7 +66,7 @@
 	<div class="container">
 		<div class="row no-padding">
 		    <div class = "col-6 form">
-		        <form action="{{action('HomeController@feedback')}}" method="post">
+		        <form action="{{route('feedback')}}" method="POST">
 		            {!! csrf_field() !!}
 		            <div class="form-group">
 		                <input type="email" class="form-control" placeholder="Type Your Email" name = "email">
@@ -76,8 +83,14 @@
 
 @endsection
 @push('script')
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"> </script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDgIdV7w8h18k8E0TtZwjIlYjFi8cCBX2Y&am"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 <script src="{{ asset('js/home.js') }}"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDgIdV7w8h18k8E0TtZwjIlYjFi8cCBX2Y&am&callback=initMap"> </script>
+<script>
+	$(function(){ initMap(); })
+</script>
 @endpush
 @section('validator')
     {!! JsValidator::formRequest('App\Http\Requests\ContactFormRequest', '#overlay-contact form') !!}

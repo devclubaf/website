@@ -11,14 +11,14 @@
     },
     "devDependencies": {
         "axios": "^0.16.2",
-        "bootstrap": "^4.0.0-beta",
+        "bootstrap": "^4.0.0-alpha.6",
+        "bootstrap-sass": "^3.3.7",
         "browser-sync": "^2.18.13",
         "browser-sync-webpack-plugin": "^1.2.0",
         "cross-env": "^5.0.1",
         "jquery": "^3.1.1",
         "laravel-mix": "^1.0",
-        "lodash": "^4.17.4",
-        "vue": "^2.1.10"
+        "lodash": "^4.17.4"
     },
     "dependencies": {
         "eonasdan-bootstrap-datetimepicker": "^4.17.47"

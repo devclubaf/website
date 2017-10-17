@@ -25,8 +25,24 @@ class RegisterFormRequest extends FormRequest
     {
         return [
             'location' => 'required|string|max:255',
-            'dob' => 'required|date',
+            'dob' => 'required|date|before:-15 years',
             'gender' => 'required|string|max:255',
         ];
     }
+
+    public function gender(): string
+    {
+        return $this->get('gender');
+    }
+
+    public function dob(): string
+    {
+        return $this->get('dob');
+    }
+
+    public function location(): string
+    {
+        return $this->get('location');
+    }
+
 }

@@ -28,4 +28,14 @@ class FeedbackFormRequest extends FormRequest
             'message' => 'required|string|max:255',
         ];
     }
+
+    public function email(): string
+    {
+        return $this->get('email');
+    }
+
+    public function message(): string
+    {
+        return $this->get('message');
+    }
 }

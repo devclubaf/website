@@ -1,6 +1,14 @@
+$(document).ready(function(){
+    $('.datepicker').datepicker({
+        autoclose: true,
+        format:  "yyyy-mm-dd",
+    });
+});
+
 var markers = [];
 var markerLocator;
 function initMap() {
+    var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
         center: new google.maps.LatLng(34.299, 66.5175319),
         zoom: 7,
@@ -14,7 +22,7 @@ function initMap() {
     });
     $.ajax({
         type:'get',
-        url:'/registered/locations',
+        url:'/registered/users',
         success:function(locations){
             for (var i = 0; i < locations.length; i++) {
                 var location= locations[i].location.split(',');
@@ -37,7 +45,9 @@ function initMap() {
                 google.maps.event.addListener(marker, 'click', function() {
                     window.open(this.url, '_blank');
                 });
+                bounds.extend(markers[i].getPosition());
             } // end of for loop
+            map.fitBounds(bounds);
             addMarkerCluster();
         }
     });
@@ -87,7 +97,7 @@ function placeMarker(location) {
             map: map,
             position: location,
             icon: {
-                url: 'http://en.lesmenuires.com/wp-content/themes/noeStarter/images/markers/default.png', // url
+                url: '../../images/marker.png', // url
                 scaledSize: new google.maps.Size(50, 50), // scaled size
                 origin: new google.maps.Point(0,0), // origin
                 anchor: new google.maps.Point(10, 0) // anchor
@@ -97,7 +107,3 @@ function placeMarker(location) {
     // setting lat and lng on their specific inputs
     $('#location').val(location.lat() + "," + location.lng());
 }
-$('.datepicker').datepicker({
-    autoclose: true,
-    format:  "yyyy-mm-dd",
-});

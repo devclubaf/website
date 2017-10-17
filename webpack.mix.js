@@ -14,7 +14,7 @@ let mix = require('laravel-mix');
 mix.browserSync('devclub.dev');
 mix.disableNotifications();
 mix.js('resources/assets/js/app.js', 'public/js')
-	.scripts(['resources/assets/vendor/map/markercluster.js', 'resources/assets/vendor/map/map-style.js', 'resources/assets/vendor/jsvalidation/js/jsvalidation.js', 'resources/assets/js/home.js'], 'public/js/home.js')
-	.scripts(['resources/assets/vendor/map/markercluster.js', 'resources/assets/vendor/map/map-style.js', 'resources/assets/vendor/jsvalidation/js/jsvalidation.js', 'resources/assets/vendor/momentjs/moment-with-locales.js', 'resources/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js', 'resources/assets/js/register.js'], 'public/js/register.js')
+	.scripts(['resources/assets/vendor/map/map-style.js', 'resources/assets/vendor/jsvalidation/js/jsvalidation.js', 'resources/assets/js/home.js'], 'public/js/home.js')
+	.scripts(['resources/assets/vendor/map/map-style.js', 'resources/assets/vendor/jsvalidation/js/jsvalidation.js', 'resources/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js', 'resources/assets/js/register.js'], 'public/js/register.js')
 	.styles('resources/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css', 'public/css/register.css')
    	.sass('resources/assets/sass/app.scss', 'public/css');

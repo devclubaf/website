@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Proengsoft\JsValidation\JsValidationServiceProvider::class,
+	SquareBoat\Sneaker\SneakerServiceProvider::class,
 
     ],
 
