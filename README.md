@@ -56,6 +56,4 @@ GITHUB_REDIRECT=http://127.0.0.1:8000/register/github/callback
 ```
 &nbsp;
 
-> Note: This repository uses Laravel Mix
-
-> To get more help on Laravel Mix go check out the [https://laravel.com/docs/5.5/mix](https://laravel.com/docs/5.5/mix).
+> Note: This repository uses Laravel Mix, To get more help on Laravel Mix go check out the [https://laravel.com/docs/5.5/mix](https://laravel.com/docs/5.5/mix).
