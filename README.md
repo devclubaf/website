@@ -33,13 +33,14 @@ The following tools are required in order to start the installation.
 
 1. Clone this repository: `git clone https://github.com/devclubaf/website.git`
 2. Run `composer install`
-3. Run `npm install` to install the dependencies as defined in the package.json file.
-4. you can create `.env` by `cp .env.example .env` 
+3. Install `node package manager` on your local machine: `https://nodejs.org/en`
+4. Run `npm install` to install the dependencies as defined in the package.json file.
+5. you can create `.env` by `cp .env.example .env` 
 	then add your db 	credential in it.
-5. Run `php artisan key:generate` to generate a key for your app.
-6. Run `php artisan migrate` to run the database migrations.
-7. (optional) Set up Github authentication (see below).
-8. Run `composer serve` to Serve the application on the PHP development server.
+6. Run `php artisan key:generate` to generate a key for your app.
+7. Run `php artisan migrate` to run the database migrations.
+8. (optional) Set up Github authentication (see below).
+9. Run `composer serve` to Serve the application on the PHP development server.
 
 > You can now visit the app in your browser by visiting [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
