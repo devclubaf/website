@@ -32,8 +32,8 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
 		<div class="collapse navbar-collapse" id="navbarColor01">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item"> <a class="nav-link" href="#">Philosophy</a> </li>
-				<li class="nav-item"> <a class="nav-link" href="#">Events</a> </li>
+				<li class="nav-item"> <a class="nav-link" target="_blank" href="https://www.facebook.com/devclub.af">Philosophy</a> </li>
+				<li class="nav-item"> <a class="nav-link" target="_blank" href="https://www.facebook.com/pg/devclub.af/events">Events</a> </li>
 				<li class="nav-item"> <a class="nav-link" href="#" id = "trigger-overlay-contact">Contact</a> </li>
 				<li class="nav-item"> <a class="nav-link" href="#" id = "trigger-overlay-feedback">Feedback</a> </li>
 			</ul>
