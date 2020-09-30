@@ -20,7 +20,7 @@ DevClub is one of the largest active, and original hackathons, where we build a 
 
 ## Requirements
 
-The following tools are required in order to start the installation.
+The following tools are required in order to start the installation process.
 
 - PHP >= 7.0.0
 - PDO PHP Extension
