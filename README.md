@@ -1,7 +1,7 @@
 &nbsp;
 [<img src="logo.png" align="right" />](http://devclub.af)
 
-# DevClub Afghanistan - Official Website
+# DevClub Afghanistan - Official Website - Built in Proper Manner.
 
 > This is the public source code repository for [DevClub's website](http://devclub.af).
  The code is entirely open source and licensed under [the MIT license](license.txt). We welcome your contributions. Read the installation guide below to get started with setting up the app on your machine.
