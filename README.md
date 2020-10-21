@@ -15,7 +15,7 @@
 
 ## About
 
-DevClub is one of the largest active, and original hackathons, where we build a talented and collaborative community of developers. Come to share your experiencies and meet with like-minded developers and ICT industry leaders, technologists, academicians, and experts for engaging and motivating conversations around specific topics including deep-dive Introduction to latest technologies and trends, development methodologies, cultures and approaches, software projects estimation and management, lessons learned world best-practices, standards and a total modernization of laest techologies and a lot more.
+DevClub is one of the biggest dynamic, and unique hackathons, where we manufacture a gifted and collective network of designers. Come to impart your experiencies and meet to similarly invested engineers and ICT industry pioneers, technologists, academicians, and specialists for drawing in and persuading discussions around explicit points including profound jump Introduction to most recent advancements and patterns, improvement strategies, societies and approaches, programming ventures assessment and the executives, exercises learned world accepted procedures, guidelines and a complete modernization of laest techologies and significantly more.
 
 
 ## Requirements
